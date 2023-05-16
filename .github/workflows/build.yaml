@@ -24,8 +24,6 @@ jobs:
     timeout-minutes: 5
     strategy:
       fail-fast: true
-      matrix:
-        go: ['stable', 'oldstable']
 
     steps:
       - name: Check out code
@@ -34,7 +32,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v4
         with:
-          go-version: ${{ matrix.go }}
+          go-version: 'stable'
           check-latest: true
 
       - name: Format code
